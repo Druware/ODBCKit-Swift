@@ -276,15 +276,15 @@ public class ODBCRecordset {
     
     // MARK: - GenDBRecordset Protocol
     
-    func fieldByName(_ fieldName: String) -> ODBCField? {
+    public func fieldByName(_ fieldName: String) -> ODBCField? {
         return currentRecord?.fieldByName(fieldName)
     }
     
-    func fieldByIndex(_ fieldIndex: Int) -> ODBCField? {
+    public func fieldByIndex(_ fieldIndex: Int) -> ODBCField? {
         return currentRecord?.fieldByIndex(fieldIndex)
     }
     
-    func close() {
+    public func close() {
         if isOpen {
             if usePseudoCursors {
                 pseudoCursorResults.removeAll()
@@ -304,7 +304,7 @@ public class ODBCRecordset {
         isOpen = false
     }
     
-    func movePrevious() -> ODBCRecord? {
+    public func movePrevious() -> ODBCRecord? {
         if !cursorsEnabled {
             lastError = "Only forward reading allowed"
             return nil
@@ -351,7 +351,7 @@ public class ODBCRecordset {
         }
     }
     
-    func moveNext() -> ODBCRecord? {
+    public func moveNext() -> ODBCRecord? {
         // If we are using pseudoCursors then we simply return the next item in the array
         if usePseudoCursors {
             currentPosition += 1
@@ -399,7 +399,7 @@ public class ODBCRecordset {
         }
     }
     
-    func moveFirst() -> ODBCRecord? {
+    public func moveFirst() -> ODBCRecord? {
         if usePseudoCursors {
             // Use the pseudoCursorArray
             currentPosition = 0
@@ -451,7 +451,7 @@ public class ODBCRecordset {
         }
     }
     
-    func moveLast() -> ODBCRecord? {
+    public func moveLast() -> ODBCRecord? {
         if usePseudoCursors {
             // Use the pseudoCursorArray
             currentPosition = UInt(pseudoCursorResults.count - 1)
@@ -517,7 +517,7 @@ public class ODBCRecordset {
         }
     }
         
-    func dictionaryFromRecord() -> [String: Any] {
+    public  func dictionaryFromRecord() -> [String: Any] {
         var dict: [String: Any] = [:]
         
         for i in 0..<columns.count {
