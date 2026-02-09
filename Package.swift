@@ -19,8 +19,8 @@ let package = Package(
             name: "ODBCKit-Swift",
             dependencies: [],
             linkerSettings: [
-                .linkedLibrary("iodbc"), // Link the iODBC system library
-                .unsafeFlags(["-L/opt/homebrew/Cellar/libiodbc/3.52.16/lib", "-I/opt/homebrew/Cellar/libiodbc/3.52.16/include"]) // Specify paths to libraries and headers
+                .linkedLibrary("odbc"), // Link the iODBC system library
+                .unsafeFlags(["-L/opt/locoal/lib", "-I/opt/local/include"]) // Specify paths to libraries and headers
             ]
         ),
         .testTarget(
