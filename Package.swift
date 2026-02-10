@@ -20,7 +20,7 @@ let package = Package(
             dependencies: [],
             linkerSettings: [
                 .linkedLibrary("odbc"), // Link the iODBC system library
-                .unsafeFlags(["-L/opt/locoal/lib", "-I/opt/local/include"]) // Specify paths to libraries and headers
+                .unsafeFlags(["-L/opt/local/lib", "-I/opt/local/include"]) // Specify paths to libraries and headers
             ]
         ),
         .testTarget(
