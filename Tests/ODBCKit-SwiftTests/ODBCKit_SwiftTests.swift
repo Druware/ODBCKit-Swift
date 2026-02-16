@@ -19,8 +19,8 @@ import Testing
     Swift.print(connection.lastError ?? "No Error")
     
     // set the parameters
-    connection.connectionString = "TrusteeSQLDB"
-    #expect(connection.connectionString == "TrusteeSQLDB")
+    connection.connectionString = "Testing"
+    #expect(connection.connectionString == "Testing")
     connection.userName = "sa"
     #expect(connection.userName == "sa")
     connection.password = "Just4Dev@"
@@ -55,8 +55,8 @@ import Testing
     Swift.print(connection.lastError ?? "No Error")
     
     // set the parameters
-    connection.connectionString = "TrusteeSQLDB"
-    #expect(connection.connectionString == "TrusteeSQLDB")
+    connection.connectionString = "Testing"
+    #expect(connection.connectionString == "Testing")
     connection.userName = "sa"
     #expect(connection.userName == "sa")
     connection.password = "Just4Dev@"
@@ -94,8 +94,8 @@ import Testing
     Swift.print(connection.lastError ?? "No Error")
     
     // set the parameters
-    connection.connectionString = "TrusteeSQLDB"
-    #expect(connection.connectionString == "TrusteeSQLDB")
+    connection.connectionString = "Testing"
+    #expect(connection.connectionString == "Testing")
     connection.userName = "sa"
     #expect(connection.userName == "sa")
     connection.password = "Just4Dev@"
@@ -125,8 +125,8 @@ import Testing
     Swift.print(connection.lastError ?? "No Error")
     
     // set the parameters
-    connection.connectionString = "TrusteeSQLDB"
-    #expect(connection.connectionString == "TrusteeSQLDB")
+    connection.connectionString = "Testing"
+    #expect(connection.connectionString == "Testing")
     connection.userName = "sa"
     #expect(connection.userName == "sa")
     connection.password = "Just4Dev@"
@@ -171,10 +171,10 @@ import Testing
     #expect (!drivers.isEmpty, "No ODBC Datasourcs Found")
     var ts : String? = nil
     drivers.forEach { driver in
-        if (driver.contains("TrusteeSQLDB")) { ts = driver }
+        if (driver.contains("Testing")) { ts = driver }
         print("Driver: \(driver)")
     }
-    #expect (ts != nil, "No TrusteeSQLDB Datasource Found")
+    #expect (ts != nil, "No Testing Datasource Found")
 }
 
 // Driver={Actual SQL Server};Server=localhost;Database=unittesting;UID=sa;PWD=Just4Dev@;
