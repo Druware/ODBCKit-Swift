@@ -118,6 +118,26 @@ import Testing
     #expect(connection.isConnected == false)
 }
 
+/// Tests ODBC recordset operations including data retrieval and field access.
+///
+/// This test verifies the ability to execute SQL queries and retrieve results through an ODBC connection:
+/// 1. Establishes an asynchronous connection to the database
+/// 2. Creates a temporary test table named "execCommandTest"
+/// 3. Inserts a test record with the value "testing"
+/// 4. Opens a recordset by executing a SELECT query
+/// 5. Navigates to the first record using `moveFirst()`
+/// 6. Retrieves the field value by index and validates it matches the inserted value
+/// 7. Drops the temporary table
+/// 8. Closes the connection and verifies disconnection
+///
+/// The test demonstrates the complete recordset lifecycle:
+/// - Creating and populating a table
+/// - Opening a recordset with `open()`
+/// - Navigating records with `moveFirst()`
+/// - Accessing field values by index using `fieldByIndex()`
+/// - Converting field values to strings with `asString()`
+///
+/// - Throws: An error if any of the SQL execution, recordset operations, or connection assertions fail
 @Test func testODBCConnectionOpen() async throws {
     // Write your test here and use APIs like `#expect(...)` to check expected conditions.
     let connection = ODBCConnection()

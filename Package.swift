@@ -17,16 +17,18 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "ODBCKit-Swift",
-            dependencies: [],
+            dependencies: [
+            ],
             linkerSettings: [
-                .linkedLibrary("iconv"),
-                .linkedLibrary("odbc"), // Link the iODBC system library
-                .unsafeFlags(["-L/usr/lib", "-L/opt/local/odbc/lib", "-I/opt/local/odbc/include"]) // Specify paths to libraries and headers
+                .linkedFramework("iODBC"),
+                //.linkedLibrary("iconv"),
+                //.linkedLibrary("odbc"), // Link the iODBC system library
+                //.unsafeFlags(["-L/usr/lib", "-L/opt/local/odbc/lib", "-I/opt/local/odbc/include"]) // Specify paths to libraries and headers
             ]
         ),
         .binaryTarget(
             name: "iODBC",
-            url: "file://Users/arsatori/temp/iODBC.framework.zip",
+            url: "https://github.com/Druware/ODBCKit-Swift/raw/refs/heads/main/zips/iODBC.framework.zip",
             checksum: "530c0d4b36fb45c43b834bfae2e6a43d0a072e893b8092836a31e76f39f627c5"
         ),
         .testTarget(
